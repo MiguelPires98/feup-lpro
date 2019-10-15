@@ -1,5 +1,7 @@
 package dkeep.logic;
 
+import java.util.Random;
+
 public class Maze {
 
     private char maze[][] ={{'x','x','x','x','x','x','x','x','x','x'},
@@ -21,22 +23,15 @@ public class Maze {
     }
 
     public void setCharacter(int x, int y, char c){
-        maze[y][x]=c;
+        this.maze[y][x]=c;
     }
 
     public int getExitX(){
-        int x,y=0;
-        for(x=0; x<maze.length; x++)
-            for(y=0;y<maze.length;y++)
-                if(maze[y][x]=='e');
-                    return y;
+        return getXPos('e');
     }
+
     public int getExitY(){
-        int x,y;
-        for(x=0; x<maze.length; x++)
-            for(y=0;y<maze.length;y++)
-                if(maze[y][x]=='e');
-                    return x;
+        return getYPos('e');
     }
 
     public int getXPos(char c){
@@ -62,28 +57,43 @@ public class Maze {
     }
 
     /*--------------------------------------------------------------------------------*/
-
-    public void printMap () {
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
-                if (maze[i][j] == 'x')
-                    System.out.print("X ");
-
-                if (maze[i][j] == ' ')
-                    System.out.print("  ");
-
-                if (maze[i][j] == 'e')
-                    System.out.print("E");
-
-                if (maze[i][j] == 'h')
-                    System.out.print("H ");
-                if (maze[i][j] == 'd')
-                    System.out.print("D ");
-                if (maze[i][j] == 'k')
-                    System.out.print("K ");
-            }
-            System.out.println();
-        }
+    public char[][] getMaze() {
+        return this.maze;
     }
+
+
+/*-------------------------try this later--------------------------
+   public Pair getExit(){
+        return getCoords('e');
+    }
+
+    public Pair getCoords(char c){
+        int x,y;
+
+        for(x=0; x<maze.length; x++)
+            for(y=0;y<maze.length;y++)
+                if(maze[y][x]==c)
+                   return coords(y,x);
+
+        return null;
+    }
+
+
+    public Pair getRandomFreeSpace(){
+        Random rand= new Random();
+        int x, y;
+
+        do {
+            x = rand.nextInt((8 - 1) + 1) + 1;
+            y = rand.nextInt((8 - 1) + 1) + 1;
+        }while(getCharacter( y,x)!=' ' );
+
+        return coords(y,x);
+    }
+
+    public int[][] getMaze() {
+        return maze[][];
+    }
+ */
 
 }
