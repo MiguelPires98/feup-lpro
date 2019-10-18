@@ -23,23 +23,23 @@ public class Cli {
 
     public static void main(String[] args){
 
-        int beat;
+        int bet;
         char move;
         GeneralGameLogic game = new GeneralGameLogic();
 
         while (game.stillOn()) {
             if(game.beginningOfSet()) {
                 do {
-                    System.out.print("your money: " + game.getPlayerMoney() + "\nhow much do you want to beat? ");
+                    System.out.print("your money: " + game.getPlayerMoney() + "\nhow much do you want to bet? ");
                     Scanner sc = new Scanner(System.in);
-                    beat = sc.nextInt();
+                    bet = sc.nextInt();
 
-                    if (beat > game.getPlayerMoney())
-                        System.out.println("you can't beat more than the money you have");
+                    if (bet > game.getPlayerMoney())
+                        System.out.println("you can't bet more than the money you have");
 
-                } while (beat > game.getPlayerMoney());
+                } while (bet > game.getPlayerMoney());
 
-                game.setBeat(beat);
+                game.setBet(bet);
             }
             do {
                 System.out.println("\n\nWhat do you want to do?\n\nhit->h\t\tdouble it->d\t\tskip->s\t\texit table->e");

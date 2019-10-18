@@ -20,10 +20,10 @@ public class OneGameSet extends GeneralGameLogic {
                 if ((dealerCount > playerCount && dealerCount < 22) || playerCount > 21)
                     System.out.println("\nyou lose!\nyour money:" + money);
                 else if (dealerCount == playerCount) {
-                    money = money + beat / 2;
+                    money = money + bet / 2;
                     System.out.println("draw!\nyour money:" + money);
                 } else {
-                    money = money + beat;
+                    money = money + bet;
                     System.out.println("\nyou win!\nyour money:" + money);
                 }
 
@@ -58,7 +58,7 @@ public class OneGameSet extends GeneralGameLogic {
             for (Integer i : playersHand)
                 System.out.print(whichCard(i) + "\t");
             if (playerCount > 21) {
-                beat = 0;
+                bet = 0;
                 endThisSet = true;
             }
         } else if (move == 'd') {
@@ -69,10 +69,10 @@ public class OneGameSet extends GeneralGameLogic {
             for (Integer i : playersHand)
                 System.out.print(whichCard(i) + "\t");
             if (playerCount > 21) {
-                beat = 0;
+                bet = 0;
                 endThisSet = true;
             }
-            beat = beat * 2;
+            bet = bet * 2;
 
         } else if (move == 's') {
             endThisSet = true;
@@ -106,7 +106,7 @@ public class OneGameSet extends GeneralGameLogic {
 
             id = draw(deck);
             dealersHand.add(id);
-               System.out.println("\nyour beat: " + beat);
+               System.out.println("\nyour bet: " + bet);
 
 
             System.out.print("\ndealer's hand: X\t" + whichCard(id) + "\t");

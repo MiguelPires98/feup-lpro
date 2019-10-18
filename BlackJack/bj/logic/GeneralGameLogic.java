@@ -5,7 +5,7 @@ public class GeneralGameLogic {
     private Player player;
     private Deck deck;
     private char move;
-    int beat=0;
+    int bet=0;
 
     public GeneralGameLogic(){
        this.player =new Player();
@@ -18,8 +18,8 @@ public class GeneralGameLogic {
    }
 
 
-   public void setBeat(int beat){
-        this.beat=beat;
+   public void setBet(int bet){
+        this.bet=bet;
    }
 
 
