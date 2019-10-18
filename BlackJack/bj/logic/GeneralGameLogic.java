@@ -6,10 +6,12 @@ public class GeneralGameLogic {
     private Deck deck;
     private char move;
     int bet=0;
+    private OneGameSet set;
 
     public GeneralGameLogic(){
        this.player =new Player();
        this.deck =new Deck();
+       this.set = new OneGameSet();
    }
 
 
@@ -33,7 +35,7 @@ public class GeneralGameLogic {
    }
 
     public boolean beginningOfSet(){
-        if(beginning)
+        if(set.beginning)
             return true;
         return false;
     }

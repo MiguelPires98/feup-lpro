@@ -17,8 +17,11 @@ public class OneGameSet extends GeneralGameLogic {
 
  while (endThisSet) {
 
-                if ((dealerCount > playerCount && dealerCount < 22) || playerCount > 21)
+                if ((dealerCount > playerCount && dealerCount < 22) || playerCount > 21){
+                    money=money-bet;
                     System.out.println("\nyou lose!\nyour money:" + money);
+               }
+
                 else if (dealerCount == playerCount) {
                     money = money + bet / 2;
                     System.out.println("draw!\nyour money:" + money);

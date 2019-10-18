@@ -87,7 +87,7 @@ public class MainGame {
 
         int id, idP;
         boolean endThisSet=false;
-        int money = 10, beat;
+        int money = 10, bet;
         int playerCount;
         int dealerCount;
 
@@ -103,15 +103,15 @@ public class MainGame {
         id=draw(deck);
         dealersHand.add(id);
         do {
-            System.out.print("your money: " + money + "\nhow much do you wan to beat? ");
+            System.out.print("your money: " + money + "\nhow much do you wan to bet? ");
             Scanner sc = new Scanner(System.in);
-            beat = sc.nextInt();
+            bet = sc.nextInt();
 
-            if(beat>money)
-                System.out.println("you can't beat more than the money you have");
-        }while(beat>money);
+            if(bet>money)
+                System.out.println("you can't bet more than the money you have");
+        }while(bet>money);
 
-        System.out.println("\nyour beat: " + beat );
+        System.out.println("\nyour bet: " + bet );
 
 
         System.out.print("\ndealer's hand: X\t" + whichCard(id) +"\t");
@@ -145,7 +145,7 @@ public class MainGame {
             for (Integer i : playersHand)
                 System.out.print(whichCard(i) + "\t");
             if(playerCount>21) {
-                beat=0;
+                bet=0;
                 endThisSet = true;
             }
         } else if (move == 'd') {
@@ -157,10 +157,10 @@ public class MainGame {
                 System.out.print(whichCard(i) + "\t");
             if(playerCount>21)
             {
-                beat=0;
+                bet=0;
                 endThisSet = true;
             }
-            beat = beat * 2;
+            bet = bet * 2;
 
         } else if (move == 's') {
             endThisSet = true;
@@ -188,15 +188,17 @@ public class MainGame {
 }
         while(endThisSet) {
 
-            if ((dealerCount > playerCount && dealerCount<22) || playerCount>21)
-                System.out.println("\nyou lose!\nyour money:" + money);
+            if ((dealerCount > playerCount && dealerCount<22) || playerCount>21){
+                money=money-bet;
+                System.out.println("\n-------------you lose!------------\nyour money:" + money);
+            }
             else if(dealerCount==playerCount){
-                money=money+beat/2;
-                System.out.println("draw!\nyour money:" + money);
+                money=money+bet/2;
+                System.out.println("---------------draw!----------------\nyour money:" + money);
             }
             else {
-                money=money+beat;
-                System.out.println("\nyou win!\nyour money:" + money);
+                money=money+bet;
+                System.out.println("\n------------you win!---------------\nyour money:" + money);
             }
 
             Scanner whatToDo = new Scanner(System.in);
