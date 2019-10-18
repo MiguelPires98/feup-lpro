@@ -4,4 +4,8 @@ Projects for the Programming Laboratory (LPRO) class of the Master in Electrical
 
 
 ## First Project
-The Dungeon Keep RPG inspired game developed in Java.
+The Dungeon Keep RPG inspired game developed in Java [here](#DungeonKeep)
+
+
+## Final Project
+BlackJack Casino Game [here](#BlackJack)
