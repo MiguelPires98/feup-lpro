@@ -37,4 +37,5 @@ BlackJack Casino Game [here](https://github.com/bgarrido7/FEUP_LPRO/tree/master/
   - if the player had a bigger count than the dealer, he wins the money that he had betted 
   
 * after the set ending, if he still has any money left, the player can bet again and another set will begin
-*(NOTE: in each game, the deck is not reset, meaning that in each set the cards that have been drawn in previuos sets, will not appear again)
+
+**(NOTE: in each game, the deck is not reset, meaning that in each set the cards that have been drawn in previuos sets, will not appear again)**
