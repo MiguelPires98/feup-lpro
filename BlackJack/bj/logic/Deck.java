@@ -8,27 +8,21 @@ public class Deck {
     int[][] deck = {{0,1,2,3,4,5,6,7,8,9,10,11,12},
             {4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}
     };
-
-
-    private int countCard(int id, int previousSum){
-        //ás
-        if(id==0) {
-            if (previousSum + 11 < 22)
-                return previousSum + 11;
-            else
-                return previousSum + 1;
-        }
-
-        //figuras
-        else if(id==1 || id==11 || id==12)
-            return previousSum + 10;
-
-            //numeros
-        else if(id > 1 || id < 11)
-            return previousSum + id;
-
-        return 0;
-    }
+    /*
+    as->0
+    rei->1
+    2->2
+    3->3
+    4->4
+    5->5
+    6->6
+    7->7
+    8->8
+    9->9
+    10->10
+    dama->11
+    valete->12
+    */
 
     //convert card number id to actual card String
     private String whichCard(int id){
@@ -46,23 +40,30 @@ public class Deck {
         return null;
     }
 
-
     //picks a card (id) that still exists in the deck
-    public int draw(int[][] deck){
+    public int draw(){
         int id;
         do {
             Random rand = new Random();
             id = rand.nextInt((12 - 0) + 1) +0 ;
-        }while(!stillHasCard(deck,id));
+        }while(!stillHasCard(id));
         deck[1][id]--;
 
         return id;
     }
 
     //checks if the deck still has cards of that id
-    private boolean stillHasCard(int[][] deck, int id){
+    private boolean stillHasCard(int id){
         if(deck[1][id]!=0)
             return true;
         return false;
+    }
+
+    public int getRandomCard(){
+        return draw();
+    }
+
+    public String getCardStr(int id){
+        return whichCard(id);
     }
 }

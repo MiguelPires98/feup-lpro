@@ -4,59 +4,93 @@ import  bj.logic.*;
 import java.util.Scanner;
 
 public class Cli {
+/*
+Game Rules:
 
-    /*
-    as->0
-    rei->1
-    2->2
-    3->3
-    4->4
-    5->5
-    6->6
-    7->7
-    8->8
-    9->9
-    10->10
-    dama->11
-    valete->12
-    */
+  - at the beginning of the game, the player has a default money (10 in this case)
 
-    public static void main(String[] args){
+  - after placing a bet that isn't higher then his current money, a set begins:
 
+
+      *  2 cards are draw for the player and the dealer, but the dealer's first card is hidden (marked as an X)
+
+      *  the player can now make his move, he can either:
+           > skip: the set ends
+           > double: set ends, player's bet is doubled
+           > hit: another card is drawn for the player, if his card count exceeds 21, the set ends with him loosing
+           > exit: the game ends and system exits program
+
+      * at the end of a set, the dealer draws cards for himself until he reaches at least 16 (already counting the hidden card)
+
+      * if the player had a bigger count than the dealer, he wins the money that he had betted
+
+
+  - after the set ending, if he still has any money left, the player can bet again and another set will begin
+
+(NOTE: in each game, the deck is not reseated, meaning that in each set the cards that have been drawn in previous sets, will not appear again)
+ */
+    public static void main(String[] args) {
+        boolean play = true;
         int bet;
         char move;
-        GeneralGameLogic game = new GeneralGameLogic();
+        GameLogic game = new GameLogic();
+        boolean betAgain = false;
 
-        while (game.stillOn()) {
-            if(game.beginningOfSet()) {
-                do {
-                    System.out.print("your money: " + game.getPlayerMoney() + "\nhow much do you want to bet? ");
-                    Scanner sc = new Scanner(System.in);
-                    bet = sc.nextInt();
-
-                    if (bet > game.getPlayerMoney())
-                        System.out.println("you can't bet more than the money you have");
-
-                } while (bet > game.getPlayerMoney());
-
-                game.setBet(bet);
-            }
+        while (play) {
             do {
-                System.out.println("\n\nWhat do you want to do?\n\nhit->h\t\tdouble it->d\t\tskip->s\t\texit table->e");
-                Scanner action = new Scanner(System.in);
-                move = action.next().charAt(0);
+                System.out.print("your money: " + game.getPlayerMoney() + "\nhow much do you want to bet? ");
+                Scanner sc = new Scanner(System.in);
+                bet = sc.nextInt();
 
-                if(move!='e' && move !='s'&& move !='h'&& move !='d')
-                    System.out.println("enter a value option");
+                if (bet > game.getPlayerMoney())
+                    System.out.println("you can't bet more than the money you have");
 
-            }while(move!='e' && move !='s'&& move !='h'&& move !='d');
+            } while (bet > game.getPlayerMoney());
+            game.setBet(bet);
 
-            if (move == 'e')
-                 System.exit(0);
-            else
-                game.setMove(move);
+            game.playGame(bet);
+            while (game.setFinish() == false) {
+                do {
+                    do {
+                        System.out.println("\n\nWhat do you want to do?\n\nhit->h\t\tdouble it->d\t\tskip->s\t\texit table->e");
+                        Scanner action = new Scanner(System.in);
+                        move = action.next().charAt(0);
+
+                        if (move != 'e' && move != 's' && move != 'h' && move != 'd')
+                            System.out.println("enter a valuable option");
+
+                        if (move == 'd' && game.getPlayerMoney() * 2 > game.getPlayerMoney()) {
+                            betAgain = true;
+                            System.out.print("you don't have enough money to double your bet");
+                        } else
+                            betAgain = false;
+                    } while (betAgain);
+                } while (move != 'e' && move != 's' && move != 'h' && move != 'd');
+
+                if (move == 'e')
+                    System.exit(0);
+                else
+                    game.setMove(move);
+
+                game.updateSet();
+            }
+
+            Scanner whatToDo = new Scanner(System.in);
+            System.out.println("\nDo you want to keep playing?\n\nyes->y\t\tno->n");
+            char quit = whatToDo.next().charAt(0);
+
+            if (quit == 'n') {
+                play = false;
+                System.exit(0);
+            } else if (quit == 'y') {
+                if (game.getPlayerMoney() <= 0) {
+                    // play=false;
+                    System.out.println("go home you drunk! you don't have any money left");
+                    System.exit(0);
+                } else
+                    play = true;
+            }
 
         }
     }
-
 }

@@ -3,7 +3,7 @@ package bj.logic;
 
 public class Player {
 
-    private int money=100;
+    private int money=10;
 
     public int getMoney(){
         return this.money;
