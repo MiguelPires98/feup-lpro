@@ -20,4 +20,4 @@ BlackJack Casino Game [here](https://github.com/bgarrido7/FEUP_LPRO/tree/master/
 
 **classes hierarchy first draft:**
 
-<img src="https://github.com/bgarrido7/FEUP_LPRO/blob/master/BlackJack/bj/classes%20hierarchy" width="800"><br><br>
+<img src="https://github.com/bgarrido7/FEUP_LPRO/blob/master/BlackJack/bj/classes%20hierarchy" width="500"><br><br>
