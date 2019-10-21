@@ -90,6 +90,8 @@ public class MainGame {
         int money = 20, bet;
         int playerCount;
         int dealerCount;
+        char move;
+        boolean betAgain=false;
 
         do{
             //--------------tira carta do dealer virada para baixo------------------------
@@ -109,6 +111,7 @@ public class MainGame {
 
                 if(bet>money)
                     System.out.println("you can't bet more than the money you have");
+
             }while(bet>money);
 
             System.out.println("\nyour bet: " + bet );
@@ -129,13 +132,21 @@ public class MainGame {
                 System.out.print(whichCard(i) + "\t");
 
             while(playerCount<22) {
-                Scanner action = new Scanner(System.in);
-                System.out.println("\n\nWhat do you want to do?\n\nhit->h\t\tdouble it->d\t\tskip->s\t\texit game->e");
-                char move = action.next().charAt(0);
+                do {
+                    Scanner action = new Scanner(System.in);
+                    System.out.println("\n\nWhat do you want to do?\n\nhit->h\t\tdouble it->d\t\tskip->s\t\texit game->e");
+                    move = action.next().charAt(0);
+
+                    if(move== 'd' && bet*2>money){
+                        betAgain=true;
+                        System.out.print("you don't have enough money to double your bet");
+                    }
+                    else
+                        betAgain=false;
+                }while(betAgain);
 
                 if (move == 'e')
                     System.exit(0);
-
 
                 else if (move == 'h') {
                     idP = draw(deck);
@@ -148,17 +159,14 @@ public class MainGame {
                         endThisSet = true;
                     }
                 } else if (move == 'd') {
-                    idP = draw(deck);
-                    playersHand.add(idP);
-                    playerCount = countCard(idP, playerCount);
-                    System.out.print("your hand: ");
-                    for (Integer i : playersHand)
-                        System.out.print(whichCard(i) + "\t");
-                    if(playerCount>21)
-                    {
-                        endThisSet = true;
-                    }
                     bet = bet * 2;
+                    endThisSet = true;
+                    while (dealerCount < 16) {
+                        id = draw(deck);
+                        dealersHand.add(id);
+                        dealerCount = countCard(id, dealerCount);
+                    }
+                    break;
 
                 } else if (move == 's') {
                     endThisSet = true;
@@ -167,16 +175,6 @@ public class MainGame {
                         dealersHand.add(id);
                         dealerCount = countCard(id, dealerCount);
                     }
-
-                    System.out.print("dealer's hand: ");
-                    for (Integer i : dealersHand)
-                        System.out.print(whichCard(i) + "\t");
-                    System.out.println("\ndealer's count: " + dealerCount);
-
-                    System.out.print("\nyour hand: ");
-                    for (Integer i : playersHand)
-                        System.out.print(whichCard(i) + "\t");
-                    System.out.println("\nyour score: " + playerCount);
                     endThisSet=true;
                     break;
 
@@ -185,6 +183,17 @@ public class MainGame {
                     System.out.print("enter a value option");
             }
             while(endThisSet) {
+
+                System.out.println("----------------------------------");
+                System.out.print("dealer's hand: ");
+                for (Integer i : dealersHand)
+                    System.out.print(whichCard(i) + "\t");
+                System.out.println("\ndealer's count: " + dealerCount);
+
+                System.out.print("\nyour hand: ");
+                for (Integer i : playersHand)
+                    System.out.print(whichCard(i) + "\t");
+                System.out.println("\nyour score: " + playerCount);
 
                 if ((dealerCount > playerCount && dealerCount<22) || playerCount>21){
                     money=money-bet;
@@ -207,7 +216,7 @@ public class MainGame {
                     System.exit(0);
                 else if(quit=='y'){
                     if(money<=0) {
-                        System.out.println("you don't have enough money");
+                        System.out.println("go home you drunk! you don't have any money left");
                         System.exit(0);
                     }
                     else{
