@@ -30,10 +30,9 @@ BlackJack Casino Game [here](https://github.com/bgarrido7/FEUP_LPRO/tree/master/
   - the player can now make his move, he can either:
     - skip: the set ends
     - double: set ends, player's bet is doubled
-    - hit: another card is drawn for the player
+    - hit: another card is drawn for the player, if his card count exceeds 21, the set ends with him loosing
     - exit: the game ends and system exits program
-  - if the player asked to draw too many cards and exceeds 21, the set ends with him loosing
-  - at the end os a set, the dealer draws cards for himself until he reaches at least 16 (already counting the hidden card)
+  - at the end of a set, the dealer draws cards for himself until he reaches at least 16 (already counting the hidden card)
   - if the player had a bigger count than the dealer, he wins the money that he had betted 
   
 * after the set ending, if he still has any money left, the player can bet again and another set will begin
