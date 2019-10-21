@@ -24,8 +24,8 @@ BlackJack Casino Game [here](https://github.com/bgarrido7/FEUP_LPRO/tree/master/
 
 **Game Rules**
 
-* at the beggining of the game, the player has a default money (10 in this case)
-* after placing a bet that isn't higher then his current money, a set beggins
+* at the begining of the game, the player has a default money (10 in this case)
+* after placing a bet that isn't higher then his current money, a set begins
   - 2 cards are draw for the player and the dealer, but the dealer's first card is hidden (marked as an X)
   - the player can now make his move, he can either:
     - skip: the set ends
@@ -38,4 +38,4 @@ BlackJack Casino Game [here](https://github.com/bgarrido7/FEUP_LPRO/tree/master/
   
 * after the set ending, if he still has any money left, the player can bet again and another set will begin
 
-**(NOTE: in each game, the deck is not reset, meaning that in each set the cards that have been drawn in previuos sets, will not appear again)**
+**(NOTE: in each game, the deck is not reset, meaning that in each set the cards that have been drawn in previous sets, will not appear again)**
