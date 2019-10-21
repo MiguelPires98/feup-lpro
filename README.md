@@ -28,7 +28,7 @@ BlackJack Casino Game [here](https://github.com/bgarrido7/FEUP_LPRO/tree/master/
 * after placing a bet that isn't higher then his current money, a set beggins
   - 2 cards are draw for the player and the dealer, but the dealer's first card is hidden (marked as an X)
   - the player can now make his move, he can either:
-    - skip: the set ends, 
+    - skip: the set ends
     - double: set ends, player's bet is doubled
     - hit: another card is drawn for the player
     - exit: the game ends and system exits program
