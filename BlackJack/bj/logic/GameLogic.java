@@ -9,7 +9,7 @@ public class GameLogic {
     private SetLogic set;
 
     public GameLogic(){
-       this.player =new Player();
+       this.player = new Player();
        this.deck =new Deck();
        this.set = new SetLogic(deck);
    }
@@ -27,24 +27,26 @@ public class GameLogic {
    public void setMove(char move){ this.move=move; }
 
 
-   public void playGame(int bet) {
-
+    //beginning of a set
+   public void playGame(int bet) { 
        set = new SetLogic(this.deck);
        set.startSet(bet);
-
    }
+
+   //check if the set has finished
    public boolean setFinish(){
         if (set.getStatus()==-1)
             return true;
         return false;
    }
+
    public void updateSet(){
-        int result = -2;
+        int result = -2; 
 
-        result=set.updateSet(this.move, bet);
+        result=set.updateSet(this.move, bet); 
 
-        bet=set.finalMoney();
-        System.out.println(bet);
+        bet=set.finalMoney();//update money
+
        if (result==-1) {
            player.setMoney(player.getMoney()-bet);
            System.out.println("\n-------------you lose!------------\nyour money:" + player.getMoney());

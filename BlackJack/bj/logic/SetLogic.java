@@ -12,10 +12,12 @@ public class SetLogic {
     private int playerCount;
     private int dealerCount;
 
+//para guardar as cartas do jogador e do dealer
     private ArrayList<Integer> dealersHand = new ArrayList<Integer>();
     private ArrayList<Integer> playersHand = new ArrayList<Integer>();
 
 
+    //begining of a set
     public SetLogic(Deck deck) {
         this.deckSet = deck;
 
@@ -27,6 +29,7 @@ public class SetLogic {
         beginning=true;
     }
 
+    //set has ended?
     public int getStatus(){
         if (endThisSet==true)
             return  -1;
@@ -53,27 +56,31 @@ public class SetLogic {
         return 0;
     }
     public void startSet(int bet){
-        //--------------tira carta do dealer virada para baixo------------------------
+
+        //--------------tira carta do dealer virada para baixo-------------------
         id = deckSet.draw();
         String dealerCard = deckSet.getCardStr(id);
         dealersHand.add(id);
 
         dealerCount = countCard(id, 0);
-        //----------------------------------------------------------------------------
 
-        id = deckSet.getRandomCard();
-        dealersHand.add(id);
         System.out.println("\nyour bet: " + bet);
 
+        //--------------tira segunda carta do dealer-------------------------------
+        id = deckSet.getRandomCard();
+        dealersHand.add(id);
 
         System.out.print("\ndealer's hand: X\t" + deckSet.getCardStr(id) + "\t");
         dealerCount = countCard(id, dealerCount);
 
+        //--------------tira carta do jogador---------------------------------
         idP = deckSet.getRandomCard();
         playersHand.add(idP);
         playerCount = countCard(idP, 0);
+
         System.out.print("\tyour hand: ");
 
+        //--------------tira segunda carta do dealer------------------------
         idP = deckSet.getRandomCard();
         playersHand.add(idP);
         playerCount = countCard(idP, playerCount);
@@ -92,9 +99,11 @@ public class SetLogic {
             System.out.print("\nyour hand: ");
             for (Integer i : playersHand)
                 System.out.print(deckSet.getCardStr(i) + "\t");
+
             if (playerCount > 21) {
-                endThisSet = true;
+                endThisSet = true;//rebentou, acaba logo o set
             }
+
         } else if (move == 'd') {
             this.bet=this.bet*2;
             endThisSet = true;
@@ -104,41 +113,45 @@ public class SetLogic {
             endThisSet = true;
             beginning=true;
         }
-        //------------------------------------------------------------------------
+        //------------------------final do set (contar cartas e ver quem ganhou)------------------------------------
         if (endThisSet) {
             if(playerCount>21) {
                 System.out.println("\nyour score: " + playerCount);
                 return -1;
             }
+        //------------------tirar desto das cartas do dealer-----------------------------
             while (dealerCount < 16) {
                 id = deckSet.getRandomCard();
                 dealersHand.add(id);
                 dealerCount = countCard(id, dealerCount);
             }
-
+        //--------------imprime cartas do dealer--------------------
             System.out.println("----------------------------------");
             System.out.print("dealer's hand: ");
             for (Integer i : dealersHand)
                 System.out.print(deckSet.getCardStr(i) + "\t");
             System.out.println("\ndealer's count: " + dealerCount);
 
+
+        //----------------imprime cartas do jogador-------------------------
             System.out.print("\nyour hand: ");
             for (Integer i : playersHand)
                 System.out.print(deckSet.getCardStr(i) + "\t");
             System.out.println("\nyour score: " + playerCount);
 
+        //-------------retorna estado do set (para a classe Game)---------------
             if (dealerCount > playerCount && dealerCount < 22) {
-                return -1;
+                return -1; //lose
             } else if (dealerCount == playerCount) {
-                return 0;
+                return 0; //draw
             } else {
-                return 1;
+                return 1; //win
             }
         }
-        return -2;
+        return -2; //error
     }
 
     public int finalMoney(){
-            return this.bet;
+        return this.bet; //estado final do dinheiro apostado no set
     }
 }

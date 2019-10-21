@@ -24,7 +24,7 @@ public class Deck {
     valete->12
     */
 
-    //convert card number id to actual card String
+    //convert card number id into actual card String
     private String whichCard(int id){
         if(id==0)
             return "as";
@@ -41,7 +41,7 @@ public class Deck {
     }
 
     //picks a card (id) that still exists in the deck
-    public int draw(){
+    private int draw(){
         int id;
         do {
             Random rand = new Random();

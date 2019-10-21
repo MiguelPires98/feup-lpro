@@ -37,6 +37,8 @@ Game Rules:
         boolean betAgain = false;
 
         while (play) {
+            //------------------------------------------place set's bet-----------------------------------------------------------------------
+
             do {
                 System.out.print("your money: " + game.getPlayerMoney() + "\nhow much do you want to bet? ");
                 Scanner sc = new Scanner(System.in);
@@ -48,7 +50,9 @@ Game Rules:
             } while (bet > game.getPlayerMoney());
             game.setBet(bet);
 
+            //------------------------------------------begin set-----------------------------------------------------------------------            
             game.playGame(bet);
+
             while (game.setFinish() == false) {
                 do {
                     do {
@@ -74,7 +78,9 @@ Game Rules:
 
                 game.updateSet();
             }
+            //------------------------------------------end set-----------------------------------------------------------------------
 
+            //----------------------------------------play another set?---------------------------------------------------------------
             Scanner whatToDo = new Scanner(System.in);
             char quit;
             do {
@@ -86,17 +92,18 @@ Game Rules:
             }while(quit!='n' && quit!= 'y');
 
             if (quit == 'n') {
-                play = false;
+                play=false;
                 System.exit(0);
             } else if (quit == 'y') {
                 if (game.getPlayerMoney() <= 0) {
-                    // play=false;
+                    play=false;
                     System.out.println("go home you drunk! you don't have any money left");
                     System.exit(0);
                 } else
-                    play = true;
+                    play = true; //play another set
             }
-
+            
         }
+        //------------------------------------------end game-----------------------------------------------------------------------
     }
 }
