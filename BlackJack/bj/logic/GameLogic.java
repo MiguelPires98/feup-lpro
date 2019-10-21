@@ -11,7 +11,6 @@ public class GameLogic {
     public GameLogic(){
        this.player = new Player();
        this.deck =new Deck();
-       this.set = new SetLogic(deck);
    }
 
    public int getPlayerMoney(){
@@ -34,7 +33,7 @@ public class GameLogic {
    }
 
    //check if the set has finished
-   public boolean setFinish(){
+   public boolean isSetFinish(){
         if (set.getStatus()==-1)
             return true;
         return false;
