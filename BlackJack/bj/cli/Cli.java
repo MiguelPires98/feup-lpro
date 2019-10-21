@@ -29,6 +29,7 @@ Game Rules:
 
 (NOTE: in each game, the deck is not reseated, meaning that in each set the cards that have been drawn in previous sets, will not appear again)
  */
+
     public static void main(String[] args) {
         boolean play = true;
         int bet;
@@ -47,13 +48,13 @@ Game Rules:
                 if (bet > game.getPlayerMoney())
                     System.out.println("you can't bet more than the money you have");
 
-            } while (bet > game.getPlayerMoney());
+            } while (bet > game.getPlayerMoney() );
             game.setBet(bet);
 
             //------------------------------------------begin set-----------------------------------------------------------------------            
             game.playGame(bet);
 
-            while (game.setFinish() == false) {
+            while (game.isSetFinish() == false) {
                 do {
                     do {
                         System.out.println("\n\nWhat do you want to do?\n\nhit->h\t\tdouble it->d\t\tskip->s\t\texit table->e");

@@ -7,7 +7,6 @@ public class SetLogic {
     private int bet;
     private int id, idP;
     private boolean endThisSet = false;
-    private boolean beginning = true;
 
     private int playerCount;
     private int dealerCount;
@@ -20,13 +19,6 @@ public class SetLogic {
     //begining of a set
     public SetLogic(Deck deck) {
         this.deckSet = deck;
-
-        dealersHand.clear();
-        playersHand.clear();
-        playerCount = 0;
-        dealerCount = 0;
-        endThisSet = false;
-        beginning=true;
     }
 
     //set has ended?
@@ -57,9 +49,14 @@ public class SetLogic {
     }
     public void startSet(int bet){
 
+        dealersHand.clear();
+        playersHand.clear();
+        playerCount = 0;
+        dealerCount = 0;
+        endThisSet = false;
+
         //--------------tira carta do dealer virada para baixo-------------------
-        id = deckSet.draw();
-        String dealerCard = deckSet.getCardStr(id);
+        id = deckSet.getRandomCard();
         dealersHand.add(id);
 
         dealerCount = countCard(id, 0);
@@ -107,25 +104,23 @@ public class SetLogic {
         } else if (move == 'd') {
             this.bet=this.bet*2;
             endThisSet = true;
-            beginning=true;
 
         } else if (move == 's') {
             endThisSet = true;
-            beginning=true;
         }
-        //------------------------final do set (contar cartas e ver quem ganhou)------------------------------------
+//------------------------final do set (contar cartas e ver quem ganhou)------------------------------------
         if (endThisSet) {
             if(playerCount>21) {
                 System.out.println("\nyour score: " + playerCount);
                 return -1;
             }
-        //------------------tirar desto das cartas do dealer-----------------------------
+            //------------------tirar desto das cartas do dealer-----------------------------
             while (dealerCount < 16) {
                 id = deckSet.getRandomCard();
                 dealersHand.add(id);
                 dealerCount = countCard(id, dealerCount);
             }
-        //--------------imprime cartas do dealer--------------------
+             //--------------imprime cartas do dealer--------------------
             System.out.println("----------------------------------");
             System.out.print("dealer's hand: ");
             for (Integer i : dealersHand)
@@ -133,13 +128,13 @@ public class SetLogic {
             System.out.println("\ndealer's count: " + dealerCount);
 
 
-        //----------------imprime cartas do jogador-------------------------
+            //----------------imprime cartas do jogador-------------------------
             System.out.print("\nyour hand: ");
             for (Integer i : playersHand)
                 System.out.print(deckSet.getCardStr(i) + "\t");
             System.out.println("\nyour score: " + playerCount);
 
-        //-------------retorna estado do set (para a classe Game)---------------
+            //-------------retorna estado do set (para a classe Game)---------------
             if (dealerCount > playerCount && dealerCount < 22) {
                 return -1; //lose
             } else if (dealerCount == playerCount) {

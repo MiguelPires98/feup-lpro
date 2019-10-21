@@ -54,7 +54,7 @@ public class Deck {
 
     //checks if the deck still has cards of that id
     private boolean stillHasCard(int id){
-        if(deck[1][id]!=0)
+        if(deck[1][id]>0)
             return true;
         return false;
     }
