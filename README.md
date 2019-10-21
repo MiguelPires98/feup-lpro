@@ -11,7 +11,7 @@ All the course's information can be viewed [here](https://sigarra.up.pt/feup/pt/
 * **Beatriz Garrido** - [bgarrido7](https://github.com/bgarrido7)
 
 
-## Side Porject
+## Side Project
 The Dragon's Bane RPG game developed in Java [here](https://github.com/bgarrido7/FEUP_LPRO/tree/master/DungeonKeep)
 
 
