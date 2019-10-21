@@ -17,3 +17,7 @@ The Dragon's Bane RPG game developed in Java [here](https://github.com/bgarrido7
 
 ## Final Project
 BlackJack Casino Game [here](https://github.com/bgarrido7/FEUP_LPRO/tree/master/BlackJack)
+
+**classes hierarchy first draft:**
+
+<img src="https://github.com/bgarrido7/FEUP_LPRO/blob/master/BlackJack/bj/classes%20hierarchy" width="800"><br><br>
