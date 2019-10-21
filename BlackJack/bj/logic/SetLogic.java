@@ -96,7 +96,7 @@ public class SetLogic {
                 endThisSet = true;
             }
         } else if (move == 'd') {
-            bet=bet*2;
+            this.bet=this.bet*2;
             endThisSet = true;
             beginning=true;
 

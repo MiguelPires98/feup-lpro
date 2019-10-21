@@ -44,6 +44,7 @@ public class GameLogic {
         result=set.updateSet(this.move, bet);
 
         bet=set.finalMoney();
+        System.out.println(bet);
        if (result==-1) {
            player.setMoney(player.getMoney()-bet);
            System.out.println("\n-------------you lose!------------\nyour money:" + player.getMoney());

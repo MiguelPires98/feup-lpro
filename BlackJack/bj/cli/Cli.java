@@ -59,7 +59,7 @@ Game Rules:
                         if (move != 'e' && move != 's' && move != 'h' && move != 'd')
                             System.out.println("enter a valuable option");
 
-                        if (move == 'd' && game.getPlayerMoney() * 2 > game.getPlayerMoney()) {
+                        if (move == 'd' && bet * 2 > game.getPlayerMoney()) {
                             betAgain = true;
                             System.out.print("you don't have enough money to double your bet");
                         } else
@@ -76,8 +76,14 @@ Game Rules:
             }
 
             Scanner whatToDo = new Scanner(System.in);
-            System.out.println("\nDo you want to keep playing?\n\nyes->y\t\tno->n");
-            char quit = whatToDo.next().charAt(0);
+            char quit;
+            do {
+                System.out.println("\nDo you want to keep playing?\n\nyes->y\t\tno->n");
+                quit = whatToDo.next().charAt(0);
+                if(quit!='n' && quit!= 'y')
+                    System.out.println("enter a valuable option");
+
+            }while(quit!='n' && quit!= 'y');
 
             if (quit == 'n') {
                 play = false;
