@@ -20,7 +20,7 @@ BlackJack Casino Game [here](https://github.com/bgarrido7/FEUP_LPRO/tree/master/
 
 **classes hierarchy first draft:**
 
-<img src="https://github.com/bgarrido7/FEUP_LPRO/blob/master/BlackJack/bj/classes%20hierarchy" width="500"><br><br>
+<img src="https://github.com/bgarrido7/FEUP_LPRO/blob/master/BlackJack/classes%20hierarchy" width="500"><br><br>
 
 **Game Rules**
 
@@ -38,3 +38,6 @@ BlackJack Casino Game [here](https://github.com/bgarrido7/FEUP_LPRO/tree/master/
 * after the set ending, if he still has any money left, the player can bet again and another set will begin
 
 **(NOTE: in each game, the deck is not reseated, meaning that in each set the cards that have been drawn in previous sets, will not appear again)**
+
+**Class Diagram**
+<img src="https://github.com/bgarrido7/FEUP_LPRO/blob/master/BlackJack/BlackJack-classDiagram.drawio" width="800"><br><br>
