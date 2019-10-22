@@ -17,7 +17,7 @@ public class SetLogic {
 
 
     //begining of a set
-    public SetLogic(Deck deck) {
+    public void SetLogic(Deck deck) {
         this.deckSet = deck;
     }
 
