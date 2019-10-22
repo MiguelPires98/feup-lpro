@@ -8,7 +8,7 @@ public class GameLogic {
     private int bet=0;
     private SetLogic set;
 
-    public GameLogic(){
+    public void GameLogic(){
        this.player = new Player();
        this.deck =new Deck();
    }
