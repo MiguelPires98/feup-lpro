@@ -34,7 +34,7 @@ Game Rules:
         boolean play = true;
         int bet;
         char move;
-        GameLogic game = new GameLogic();
+        Table game = new Table();
         boolean betAgain = false;
 
         while (play) {

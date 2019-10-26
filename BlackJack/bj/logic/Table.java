@@ -1,6 +1,6 @@
 package bj.logic;
 
-public class GameLogic {
+public class Table {
 
     private Player player;
     private Deck deck;
@@ -8,7 +8,7 @@ public class GameLogic {
     private int bet=0;
     private SetLogic set;
 
-    public void GameLogic(){
+    public Table(){
        this.player = new Player();
        this.deck =new Deck();
    }
