@@ -1,4 +1,4 @@
-# FEUP_LPRO
+# feup-lpro
 
 This repository contains all the Side Projects and the Final ProjectLabs done in the course Laboratório de Programação, a **4th year course** in the Master in Electrical and Computers Engineering @ FEUP
 
