@@ -6,11 +6,6 @@ This repository contains all the Side Projects and the Final ProjectLabs done in
 
 All the course's information can be viewed [here](https://sigarra.up.pt/feup/pt/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=436865).
 
-## Authors
-
-* **Beatriz Garrido** - [bgarrido7](https://github.com/bgarrido7)
-
-
 ## Side Project
 The Dragon's Bane RPG game developed in Java [here](https://github.com/bgarrido7/FEUP_LPRO/tree/master/DungeonKeep)
 
