@@ -2,7 +2,7 @@
 
 This repository contains all the Side Projects and the Final ProjectLabs done in the course Laboratório de Programação, a **4th year course** in the Master in Electrical and Computers Engineering @ FEUP
 
-## Course Content
+### Course Content
 
 All the course's information can be viewed [here](https://sigarra.up.pt/feup/pt/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=436865).
 
