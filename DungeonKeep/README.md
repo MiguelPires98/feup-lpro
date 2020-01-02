@@ -4,17 +4,22 @@ In this mini-quest, we were asked to portray the classical situation of "The Maz
 # Game Rules
 The user should be asked to enter single character commands in order to move the main character ("hero") in 4 possible directions (up, down, left, right). If there is a wall or door towards that direction, the hero remains at the same position. Upon entering each command, the program should update the game and reprint the game map. Hint: Use the Scanner class for input, as seen at the Tavern.
 
+**Screenshots**
+
+<img src=https://github.com/bgarrido7/feup-lpro/blob/master/DungeonKeep/screenshot2.png>
+
 ## Tasks II
 
 *  "Refactoring" to Objects: Separate user interaction from game logic. Create two separate packages, one containing the class(es) for user input, for example: dkeep.cli (command line interface), and another containing the classes for the game logic, for example: dkeep.logic.
 
 **Advanced Game Logic**
 
-The key is randomly placed on the maze, when the game launches (on a valid position, without overlapping any of the other elements). Picking up the key does not "remotely" open the door. The Hero must reach the exit and spend one extra move (towards the exit cell) to unlock the door ('E' disappears) and only then can it move onto the exit and into freedom. 
+* The key is randomly placed on the maze, when the game launches (on a valid position, without overlapping any of the other elements). Picking up the key does not "remotely" open the door. The Hero must reach the exit and spend one extra move (towards the exit cell) to unlock the door ('E' disappears) and only then can it move onto the exit and into freedom. 
+
+* Create a new moving strategy for the dragon where he can, randomly, fall asleep and stay asleep for a random number of turns. If the dragon is asleep and the hero goes near him, unarmed, he/she does not die. The hero can slay a sleeping dragon. When the dragon awakes, he moves randomly again. When asleep, the dragon representation changes to 'd' (lowercase d).
  
  
-# Screenshots
-<img src=https://github.com/bgarrido7/feup-lpro/blob/master/DungeonKeep/screenshot2.png>
+**Screenshots**
 
 <img src=https://github.com/bgarrido7/feup-lpro/blob/master/DungeonKeep/screenshot3.png>
 
