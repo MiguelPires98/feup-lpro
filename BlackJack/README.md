@@ -1,11 +1,11 @@
-##Classes hierarchy first draft
+### Classes hierarchy first draft
 
 <img src="https://github.com/bgarrido7/FEUP_LPRO/blob/master/BlackJack/UMLs/classesHierarchy.png" width="500"><br><br>
 
-## Class Diagram
+### Class Diagram
 <img src="https://github.com/bgarrido7/FEUP_LPRO/blob/master/BlackJack/UMLs/classDiagram.png" width="800"><br><br>
 
-#Game Rules
+# Game Rules
 
 * at the begining of the game, the player has a default money (10 in this case)
 * after placing a bet that isn't higher then his current money, a set begins
@@ -21,5 +21,8 @@
 * after the set ending, if he still has any money left, the player can bet again and another set will begin
 
 **(NOTE: in each game, the deck is not reseated, meaning that in each set the cards that have been drawn in previous sets, will not appear again)**
+
+# Screenshots
+
 
 
