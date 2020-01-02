@@ -9,13 +9,8 @@ All the course's information can be viewed [here](https://sigarra.up.pt/feup/pt/
 ## Side Project
 The Dragon's Bane RPG game developed in Java [here](https://github.com/bgarrido7/FEUP_LPRO/tree/master/DungeonKeep)
 
-
-## Final Project
-BlackJack Casino Game [here](https://github.com/bgarrido7/FEUP_LPRO/tree/master/BlackJack)
-
-**classes hierarchy first draft:**
-
-<img src="https://github.com/bgarrido7/FEUP_LPRO/blob/master/BlackJack/UMLs/classesHierarchy.png" width="500"><br><br>
+## Final Project's Initial Draft
+The initial game logic BlackJack Casino Game [here](https://github.com/bgarrido7/FEUP_LPRO/tree/master/BlackJack). In this first draft, no GUI was created, the only way to play it was through the terminal
 
 **Game Rules**
 
@@ -34,5 +29,5 @@ BlackJack Casino Game [here](https://github.com/bgarrido7/FEUP_LPRO/tree/master/
 
 **(NOTE: in each game, the deck is not reseated, meaning that in each set the cards that have been drawn in previous sets, will not appear again)**
 
-**Class Diagram**
-<img src="https://github.com/bgarrido7/FEUP_LPRO/blob/master/BlackJack/UMLs/classDiagram.png" width="800"><br><br>
+
+## Final Project
