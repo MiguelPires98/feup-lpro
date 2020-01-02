@@ -16,6 +16,7 @@
 **(NOTE: in each game, the deck is not reseated, meaning that in each set the cards that have been drawn in previous sets, will not appear again)**
 
 # Screenshots
+<img src=https://github.com/bgarrido7/feup-lpro/blob/master/BlackJack/screenshot.png>
 
 ### Classes hierarchy
 
