@@ -28,4 +28,4 @@ Praise the Gods! What a holy gift! Not even in your most wild expectations would
 
 
 # Screenshots
-[https://github.com/bgarrido7/feup-lpro/blob/master/DungeonKeep/Screenshot.png]
+(https://github.com/bgarrido7/feup-lpro/blob/master/DungeonKeep/Screenshot.png)
