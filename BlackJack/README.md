@@ -1,10 +1,3 @@
-### Classes hierarchy first draft
-
-<img src="https://github.com/bgarrido7/FEUP_LPRO/blob/master/BlackJack/UMLs/classesHierarchy.png" width="500"><br><br>
-
-### Class Diagram
-<img src="https://github.com/bgarrido7/FEUP_LPRO/blob/master/BlackJack/UMLs/classDiagram.png" width="800"><br><br>
-
 # Game Rules
 
 * at the begining of the game, the player has a default money (10 in this case)
@@ -23,6 +16,14 @@
 **(NOTE: in each game, the deck is not reseated, meaning that in each set the cards that have been drawn in previous sets, will not appear again)**
 
 # Screenshots
+
+### Classes hierarchy
+
+<img src="https://github.com/bgarrido7/FEUP_LPRO/blob/master/BlackJack/UMLs/classesHierarchy.png" width="500"><br><br>
+
+### Class Diagram
+<img src="https://github.com/bgarrido7/FEUP_LPRO/blob/master/BlackJack/UMLs/classDiagram.png" width="800"><br><br>
+
 
 
 
